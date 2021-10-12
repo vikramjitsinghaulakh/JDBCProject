@@ -27,13 +27,27 @@ public class DatabaseConection {
 		try
 		{
 			Class.forName("org.postgresql.Driver");
-			return DriverManager.getConnection(databaseURL, userName, password);
+			connection = DriverManager.getConnection(databaseURL, userName, password);
+			return connection;
 		}
 		catch(SQLException |ClassNotFoundException e)
 		{
 			System.out.println(e.getMessage());
 		}
 		return connection;
+	}
+
+	public static void terminateSession()
+	{
+		try {
+			connection.close();
+		} 
+		catch (SQLException e)
+		{
+
+			e.printStackTrace();
+		}
+
 	}
 
 

@@ -8,8 +8,9 @@ public class PizzaOrder {
 	private String orderDate;
 	private int customerID;
 	private int orderQuantity;
+	private String orderStatus;
 	
-	public PizzaOrder(int orderID,String orderDetails ,String orderType , String orderDate , int customerID , int orderQuantity)
+	public PizzaOrder(int orderID,String orderDetails ,String orderType , String orderDate , int customerID , int orderQuantity , String orderStatus)
 	{
 		this.orderID = orderID;
 		this.orderDetails = orderDetails ;
@@ -17,6 +18,7 @@ public class PizzaOrder {
 		this.orderDate = orderDate;
 		this.customerID = customerID;
 		this.orderQuantity = orderQuantity;
+		this.orderStatus = orderStatus;
 		
 	}
 
@@ -68,10 +70,18 @@ public class PizzaOrder {
 		this.orderQuantity = orderQuantity;
 	}
 
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "\n\t" + orderID + "\t" + orderDetails + "\t" + orderType
-				+ "\t\t" + orderDate + "\t" + customerID + "\t\t" + orderQuantity ;
+				+ "\t\t" + orderDate + "\t" + customerID + "\t\t" + orderQuantity+ "\t\t" + orderQuantity +"\t\t" +  orderStatus+"\n" ;
 	}
 	
 	
